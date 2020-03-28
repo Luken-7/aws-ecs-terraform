@@ -1,0 +1,4 @@
+.idea
+infrastructure/.terraform
+platform/.terraform
+application/infrastructure/.terraform
