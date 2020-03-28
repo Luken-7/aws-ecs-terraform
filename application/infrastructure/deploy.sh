@@ -6,7 +6,7 @@ ECR_REPO_URL="${AWS_ACCOUNT}.dkr.ecr.eu-west-1.amazonaws.com/${SERVICE_NAME}"
 
 if [ "$1" = "dockerize" ] && [ "$2" != "" ] ; then
   echo "Starting Dockerizing the PythonApp..."
-  cd ../PythonApp
+  cd ../Python-App
   $(aws ecr get-login --no-include-email --region eu-west-1)
   aws ecr create-repository --repository-name ${SERVICE_NAME} || true
   docker build -t ${SERVICE_NAME}:${SERVICE_TAG} .
